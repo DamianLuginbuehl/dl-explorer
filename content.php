@@ -11,11 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Raleway:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="icon.png">
+    <link rel="icon" href="logo.png">
 
 </head>
 
 <body>
+    <div class="version">
+        <a href="https://dl-projects.ch/explorer">Version 1.5.2</a>
+    </div>
     
 <?php
 
