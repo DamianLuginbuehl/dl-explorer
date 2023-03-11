@@ -17,12 +17,18 @@
 
 <body>
     <div class="version">
-        <a href="https://dl-projects.ch/explorer">Version 1.5.2</a>
+        <a href="https://dl-projects.ch/explorer">Version 1.5.3</a>
     </div>
     
 <?php
 
-$content = htmlspecialchars($_GET["file"]);
+$content = htmlspecialchars($_GET["directory"]);
+
+if(isset($_GET['file'])) {
+    $fileurl = htmlspecialchars($_GET["file"]);
+};
+
+
 
 include($content);
 
@@ -31,17 +37,26 @@ echo "<title>{$info[1]}</title>";
 
 //Explorer
 
-if($info[3] == "explorer") {
+if($info[2] == "explorer") {
 
 $repeat = sizeof($cards, 0);
 $count = 0;
 
-echo "<header>\n<a href=\"{$info[5]}\" class=\"backlink\">{$info[4]}</a>\n</header>";
+echo "<header>\n<a href=\"?directory={$info[4]}\" class=\"backlink\">{$info[3]}</a>\n</header>";
 echo "<main>";
 
 while ($repeat >= 1) {
 
-    echo "<div class=\"card\">\n<a href=\"{$cards[$count][1]}\">\n<div class=\"link\">\n<img src=\"{$cards[$count][2]}\" alt=\"icon\">\n<p>{$cards[$count][3]}</p>\n</div>\n</a>\n</div>";
+    if($cards[$count][4] == "false"){
+        echo "<div class=\"card\">\n<a href=\"?directory={$cards[$count][1]}\">\n<div class=\"link\">\n<img src=\"{$cards[$count][2]}\" alt=\"icon\">\n<p>{$cards[$count][3]}</p>\n</div>\n</a>\n</div>";
+
+    } else {
+        if($cards[$count][4] == "true"){
+            echo "<div class=\"card\">\n<a href=\"{$cards[$count][1]}\" download>\n<div class=\"link\">\n<img src=\"{$cards[$count][2]}\" alt=\"icon\">\n<p>{$cards[$count][3]}</p>\n</div>\n</a>\n</div>";
+    
+        };
+    };
+
 
     $count = $count+1;
     $repeat = $repeat-1;
@@ -56,19 +71,19 @@ echo "</main>";
 
 //File 
 
-if($info[3] == "file") {
+if($info[2] == "file") {
 
-    echo "<header class=\"back\">\n<a href=\"{$info[5]}\" class=\"backlink\">\n<div class=\"back pg\">\n•••\n</div>\n</a>\n</header>";
+    echo "<header class=\"back\">\n<a href=\"?directory={$info[4]}\" class=\"backlink\">\n<div class=\"back pg\">\n•••\n</div>\n</a>\n</header>";
     
     if($info[6] == "image"){
-        echo "<div style=\"position: absolute; left: 0; top: 3vh; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100vw; height: 97vh;\">";
-        echo "<img style=\"max-width: 100vw; max-height: 97vh; top: 3vh\"  src=\"{$file[1]}\"></img>";
+        echo "<div class=\"file-viewer\" style=\"position: absolute; left: 0; top: 3vh; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100vw; height: 97vh;\">";
+        echo "<img style=\"max-width: 100vw; max-height: 97vh; top: 3vh\"  src=\"{$fileurl}\"></img>";
         echo "</div>";
     };
 
     if($info[6] == "pdf"){
-        echo "<main>";
-        echo "<iframe src=\"{$file[1]}\" frameborder=\"0\"></iframe>";
+        echo "<main class=\"file-viewer\">";
+        echo "<iframe src=\"{$fileurl}\" frameborder=\"0\"></iframe>";
         echo "</main>";
     };
     

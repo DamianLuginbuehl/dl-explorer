@@ -10,10 +10,10 @@ $info = array(
     1=>'DL Explorer',
 
     //Doctype (explorer, file)
-    3=>'file',
+    2=>'file',
 
-    //Backlink
-    5=>'../',
+    //Backlink  (URL parameter "directory")
+    4=>'../',
 
     //Filetype (image, pdf)
     6=>'pdf'
@@ -21,11 +21,6 @@ $info = array(
 
 
 
-$file = array(
-
-    1=>'file.pdf'
-
-);
 
 
 

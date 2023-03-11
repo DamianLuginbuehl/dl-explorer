@@ -9,17 +9,14 @@ $info = array(
     //Doctitle
     1=>'DL Explorer',
 
-    //Icon path
-    2=>'logo.png',
-
     //Doctype (explorer, file)
-    3=>'explorer',
+    2=>'explorer',
 
-    //Titel
-    4=>'Titel',
+    //Title
+    3=>'Titel',
 
-    //Backlink
-    5=>'../'
+    //Backlink (URL parameter "directory")
+    4=>'../'
 );
 
 
@@ -27,25 +24,31 @@ $info = array(
 $cards = array(
 
     array(
-        //URL
+        //URL (URL parameter "directory")
         1=>'folder',
 
-        //Icon path
-        2=>'folder-icon.png',
+        //Icon path (from content.php perspective)
+        2=>'icons/folder-icon.png',
 
         //Name
-        3=>'Punkt 1'
+        3=>'Punkt 1',
+
+        //Download on click?
+        4=>'false'
     ),
 
     array(
-        //URL
+        //URL (URL parameter "directory")
         1=>'pdf',
 
-        //Icon path
-        2=>'pdf-icon.png',
+        //Icon path (from content.php perspective)
+        2=>'icons/pdf-icon.png',
 
         //Name
-        3=>'PDF 2'
+        3=>'PDF 2',
+
+        //Download on click?
+        4=>'false'
     ) 
 
 );

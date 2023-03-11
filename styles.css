@@ -466,6 +466,10 @@
     text-decoration: underline;
   }
 
+  .file-viewer {
+    background-color: var(--dl-white);
+}
+
 
 
   @media (prefers-color-scheme: dark) {
@@ -476,6 +480,26 @@
 
       color: var(--dl-white);
 
+    }
+
+    .file-viewer {
+        background-color: var(--dl-black);
+    }
+
+  }
+
+  @media (prefers-color-scheme: light) {
+
+    .pg {
+
+      background-color: var(--page-gray);
+
+      color: var(--dl-black);
+
+    }
+
+    .file-viewer {
+        background-color: var(--dl-white);
     }
 
   }
