@@ -1,0 +1,465 @@
+/* Reset */
+
+* {
+
+    padding: 0;
+
+    margin: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+
+:root {
+
+
+
+    /* General */
+
+    --dl-white: #ffffff;
+
+    --dl-black: #000000;
+
+  
+
+    /* Damian LuginbÃ¼hl */
+
+    --designers-beige: #c5b497;
+
+    --alpha-beige: rgb(197, 180, 151, 0.25);
+
+    --writers-beige: #bda989;
+
+    --night-beige: #898379;
+
+    --alpha-white: #f0ece4;
+
+    --alpha-night-black: #494540;
+
+    --night-black: #202124;
+
+    --anthracite: #2d2d2d;
+
+    --page-gray: #ededed;
+
+    --system-red: #cc0000;
+
+  
+
+    /* Scrollbars */
+
+    --d-sb-idle: #555555;
+
+    --d-sb-hover: #666667;
+
+  
+
+    --l-sb-idle: #999999;
+
+    --l-sb-hover: #888887;
+
+  
+
+    /* Font Weights */
+
+    --thin: 100;
+
+    --extra-light: 200;
+
+    --light: 300;
+
+    --regular: 400;
+
+    --medium: 500;
+
+    --semi-bold: 600;
+
+    --bold: 700;
+
+    --extra-bold: 800;
+
+    --black: 900;
+
+  }
+
+  
+
+  
+
+  
+
+  /* Scrollbar Settings */
+
+  
+
+  /* Bar */
+
+  ::-webkit-scrollbar {
+
+    width: 10px;
+
+  }
+
+  
+
+  
+
+  ::-webkit-scrollbar-track {
+
+    background: transparent;
+
+  }
+
+  
+
+  
+
+  ::-webkit-scrollbar-thumb {
+
+    background: var(--l-sb-idle);
+
+    border-radius: 5px;
+
+  }
+
+  
+
+  
+
+  ::-webkit-scrollbar-thumb:hover {
+
+    background: var(--l-sb-hover);
+
+  }
+
+  
+
+  ::-webkit-scrollbar-button:single-button {
+
+    background-color: transparent;
+
+    display: block;
+
+    border-style: solid;
+
+    height: 13px;
+
+    width: 16px;
+
+  }
+
+  
+
+  /* Up */
+
+  ::-webkit-scrollbar-button:single-button:vertical:decrement {
+
+    border-width: 0 5px 5px 5px;
+
+    border-radius: 4px;
+
+    border-color: transparent transparent var(--l-sb-idle) transparent;
+
+  }
+
+  
+
+  ::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+
+    border-color: transparent transparent var(--l-sb-hover) transparent;
+
+  }
+
+  
+
+  /* Down */
+
+  ::-webkit-scrollbar-button:single-button:vertical:increment {
+
+    border-width: 5px 5px 0 5px;
+
+    border-radius: 4px;
+
+    border-color: var(--l-sb-idle) transparent transparent transparent;
+
+  }
+
+  
+
+  ::-webkit-scrollbar-button:vertical:single-button:increment:hover {
+
+    border-color: var(--l-sb-hover) transparent transparent transparent;
+
+  }
+
+  
+
+  .click-to-scroll {
+
+    margin-top: 32vh;
+
+    margin-bottom: 5vh;
+
+  }
+
+  
+
+  html {
+
+    scroll-behavior: smooth;
+
+  }
+
+  
+
+  head,
+
+  body {
+
+    font-family: 'Raleway', sans-serif;
+
+    font-weight: var(--regular);
+
+    background-color: var(--dl-white);
+
+    color: var(--dl-black);
+
+  
+
+    /* The next property can be disabled for debugging. Its just there for ✨THE STYLE✨... */
+
+  }
+
+
+
+  a {
+
+    text-decoration: none;
+
+    color: var(--dl-black);
+
+  }
+
+
+
+  header {
+
+    background-color: var(--page-gray);
+
+    position: fixed;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    top: 0;
+
+    left: 0;
+
+    height: 10vh;
+
+    width: 100vw;
+
+    font-size: 5vh;
+
+    line-height: 5vh;
+
+    z-index: 1000;
+
+  }
+
+
+
+  main {
+
+    height: 80vh;
+
+    width: 100vw;
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    flex-direction: row;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    gap: 2vw;
+
+  }
+
+
+
+  .card {
+
+    background-color: var(--page-gray);
+
+    border-radius: 20px;
+
+    width: 30vh;
+
+    height: 30vh;
+
+    z-index: 500;
+
+  }
+
+
+
+  .link {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 3vh;
+
+    text-align: center;
+
+  }
+
+
+
+  .backlink {
+
+    justify-self: flex-start;
+
+  }
+
+
+
+  .link img {
+
+    width: 80%;
+
+    height: 60%;
+
+    object-fit: contain;
+
+    margin-bottom: 2vh;
+
+
+
+  }
+
+
+
+  header.back {
+
+    background-color: var(--dl-black);
+
+    color: var(--night-black);
+
+    position: fixed;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    top: 0;
+
+    left: 0;
+
+    height: 3vh;
+
+    width: 100vw;
+
+    font-size: 2vh;
+
+    line-height: 3vh;
+
+    text-align: center;
+
+    vertical-align: center;
+
+  }
+
+
+
+  div.back {
+
+    width: 100vw;
+
+    height: 3vh;
+
+  }
+
+
+
+  iframe {
+
+    width: 100vw;
+
+    height: 97vh;
+
+    overflow-y: hidden;
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+  }
+
+
+
+ 
+
+
+
+  
+
+
+
+  .invert {
+
+    filter: invert(1);
+
+  }
+
+
+
+  .out-of-order {
+
+    color: var(--system-red);
+
+    text-decoration: line-through;
+
+  }
+
+
+
+  @media (prefers-color-scheme: dark) {
+
+    .pg {
+
+      background-color: var(--night-black);
+
+      color: var(--dl-white);
+
+    }
+
+  }
